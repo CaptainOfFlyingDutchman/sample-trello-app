@@ -13,14 +13,14 @@ class Card extends React.Component {
   }
 
   render() {
-    const { title, description, comments } = this.props.card;
+    const { title, description, comments, labels } = this.props.card;
     return (
-      <div>
+      <div className="card">
         <div>
           <LaneButtons card={this.props.card} changeLane={this.changeLane} />
         </div>
         <div>
-          <h4>{title}</h4>
+          <h4>{title} &mdash; <span className="labels">{labels.join(', ')}</span></h4>
           <p>{description}</p>
           <b>Comments</b>
           <ul>

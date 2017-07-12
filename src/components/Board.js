@@ -1,5 +1,6 @@
 import React, {PropTypes} from 'react';
 import Lane from './Lane';
+import Search from './Search';
 
 import * as cardActions from '../actions/cardActions';
 
@@ -16,14 +17,24 @@ class Board extends React.Component {
     const { changeCard } = this.props.cardActions;
 
     return (
-      <ul className="lanes">
-        {
-          lanes.map((lane, i) => {
-            const filteredCards = this.filter(cards, lane);
-            return <li key={i}><Lane lane={lane} cards={filteredCards} changeCard={changeCard} /></li>;
-          })
-        }
-      </ul>
+      <div>
+        <div className="container-fluid">
+          <div className="row">
+            <div className="col-xs-12 col-md-6 col-md-offset-4">
+              <Search cards={cards} />
+            </div>
+          </div>
+        </div>
+
+        <ul className="lanes">
+          {
+            lanes.map((lane, i) => {
+              const filteredCards = this.filter(cards, lane);
+              return <li key={i}><Lane lane={lane} cards={filteredCards} changeCard={changeCard} /></li>;
+            })
+          }
+        </ul>
+      </div>
     );
   }
 }

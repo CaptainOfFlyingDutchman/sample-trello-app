@@ -8,7 +8,7 @@ const Lane = ({ lane, cards, changeCard }) => {
       <ul>
         {
           cards.map((card) => {
-            return <li key={card.id}><Card card={card} changeCard={changeCard} /></li>
+            return <li key={card.id}><Card card={card} changeCard={changeCard} /></li>;
           })
         }
       </ul>

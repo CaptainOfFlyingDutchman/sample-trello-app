@@ -15,6 +15,16 @@
   margin-right: 60px;
 }
 
+.labels {
+  font-size: 14px;
+}
+
 button[disabled] {
   cursor: not-allowed;
+}
+
+.search-results {
+    position: absolute;
+    background: wheat;
+    width: 500px;
 }
